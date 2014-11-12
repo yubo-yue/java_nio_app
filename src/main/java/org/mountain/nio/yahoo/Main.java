@@ -2,8 +2,6 @@ package org.mountain.nio.yahoo;
 
 import java.io.InputStream;
 
-import org.apache.log4j.PropertyConfigurator;
-
 public class Main {
 
 	public static void main(String[] args) throws Exception {
@@ -30,6 +28,8 @@ public class Main {
 		Weather weather = new YahooParser().parse(dataIn);
 		// Format (Print) Data
 		System.out.print(new WeatherFormatter().format(weather));
+		
+		dataIn.close();
 	}
 
 }
